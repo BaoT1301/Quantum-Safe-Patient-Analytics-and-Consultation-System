@@ -1,0 +1,14 @@
+
+services:
+  - type: web
+    name: quantum-safe-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SUPABASE_URL
+        value: https://dqziqcedbdxomsrxiarq.supabase.co
+      - key: SUPABASE_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRxemlxY2VkYmR4b21zcnhpYXJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE2MjQyMDAsImV4cCI6MjA0NzIwMDIwMH0.CIEqSet-aJoWrvJCTuBcKg4LhsN7PgGOLi0cOvl0Ju4
+      - key: GEMINI_API_KEY
+        value: AIzaSyDV5aot18x8sNZMB9KJIKdAnj1YHdQ-iBs
